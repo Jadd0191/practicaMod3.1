@@ -1,6 +1,6 @@
-service:
+services:
   postgres:
-    build:
+    build: .
     container_name: ContDBpractMod3.1
     ports:
       - "5432:5432"
@@ -9,8 +9,7 @@ service:
       POSTGRES_PASSWORD: p4ssw0rdDB
       POSTGRES_DB: credenciales
     volumes:
-
-       - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
 volumes:
   postgres_data:
     driver: local

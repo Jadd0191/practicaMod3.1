@@ -1,9 +1,9 @@
-CREATE TABLE usuario (
+CREATE TABLE usuarios(
     id_usuario SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NuLL,
     correo VARCHAR(255) UNIQUE,
     telefono VARCHAR(15),
-    fecha de naciomiento DATE
+    fecha de nacimiento DATE
 );
 
 CREATE TABLE credenciales(

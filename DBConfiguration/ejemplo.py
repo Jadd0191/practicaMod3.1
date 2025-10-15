@@ -1,4 +1,5 @@
 import psycopg2
+
 # 1. Conexión a la base de datos
 conexion = psycopg2.connect(
     host="localhost",
@@ -10,12 +11,15 @@ conexion = psycopg2.connect(
 
 # 2. Crear cursor
 cursor = conexion.cursor()
+
 # 3. Ejecutar consulta
 cursor.execute("SELECT * FROM usuarios;")
 registros = cursor.fetchall()
+
 # 4. Mostrar resultados
 for fila in registros:
     print(fila)
+
 # 5. Cerrar conexión
 cursor.close()
 conexion.close ()
