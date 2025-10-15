@@ -1,15 +1,15 @@
-CREATE TABLE usuarios(
+CREATE TABLE usuarios (
     id_usuario SERIAL PRIMARY KEY,
-    nombre VARCHAR(100) NOT NuLL,
+    nombre VARCHAR(100) NOT NULL,
     correo VARCHAR(255) UNIQUE,
     telefono VARCHAR(15),
-    fecha de nacimiento DATE
+    fecha_nacimiento DATE
 );
 
-CREATE TABLE credenciales(
-    id_credenciales serial primary KEY,
-    id_usuario int not null,
-    usarname varchar(50) UNIQUE not null,
-    password_hash varchar(255) not null,
-    FOREIGN KEY (id_usuario) references usuario(id_usuario)
+CREATE TABLE credenciales (
+    id_credencial SERIAL PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios (id_usuario)
 );
